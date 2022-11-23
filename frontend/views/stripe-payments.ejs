@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles-stripe-payments.css"></link>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Rubik+Bubbles&family=Rubik+Marker+Hatch&display=swap" rel="stylesheet">
+    <title>Checkout con Stripe</title>
+</head>
+<body>
+
+
+    <!-- CODIGO HTML URL EN ATRIBBUTO INCLUIDO-->
+    <div data-include="./componentes/stripe-payments-form.ejs"></div>
+
+
+    <!-- SE INCLUYE EL HTML -->
+    <script src="./controllers/includePaymentsForm.js" type="module"></script>
+    <!-- SE EJECUTA  CODIGO DINAMICO -->
+    <script src="./scripts/stripe-checkout.js"  type="module"></script>
+    <!-- SE EJECUTA API STRIPE -->
+    <script src="https://js.stripe.com/v3/"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/multiple-uploads.css"></link>
+    <title>Uploader Drag and Drop con AJAX</title>
+</head>
+<body>
+    <h1>Uploader Drag and Drop</h1>
+    <main id="main">
+
+            <article class="dropZone">
+                <p>Arrasta y suelta tus archivos</p>
+            </article>
+
+    </main>
+
+
+    <script>
+        // CON XMLHTTP PREVINIENDO ENVIÓ DE FORMULARIO
+        // const $form = document.getElementById("form");
+        const $main = document.getElementById("main");
+        const $dropZone = document.querySelector(".dropZone");
+  
+
+        // $dropZone.addEventListener('submit', (e) => {
+        //     e.preventDefault();
+        //     const files = Array.from($input.files);
+        //     files.forEach((el)=>{ progressUpload(el)});
+        // })
+        
+        
+        const sendData = (data) => {
+        
+             // 1
+            const xhr = new XMLHttpRequest();
+            const formData = new FormData();
+        
+            formData.append("files", data)
+        
+            // 2
+            xhr.addEventListener("readystatechange",(e)=>{
+            
+                if (xhr.readyState !== 4)return;
+            
+                if (xhr.status >= 200 && xhr.status < 300) {
+                
+                    console.log(xhr.responseText);
+                    $dropZone.classList.remove("is-active");
+                
+                } else {
+                    let message = xhr.statusText || "Ocurrió un error";
+                    console.log(`Error ${xhr.status}: ${message}`);
+                }
+            });
+        
+            // 3
+            xhr.open("POST", "http://localhost:3000/multipleUploads");
+        
+            xhr.setRequestHeader("enc-type", "multipart/form-data");
+        
+            // 4
+            xhr.send(formData);
+        }
+
+    const progressUpload = (file) => {
+
+    const $progress = document.createElement("progress");
+    const $span = document.createElement("span");
+
+    $progress.value = 0;
+    $progress.max = 100;
+
+    $main.insertAdjacentElement("beforeend", $progress);
+    $main.insertAdjacentElement("beforeend", $span);
+
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+
+    fileReader.addEventListener("progress", (e)=>{
+
+        let progress = parseInt((e.loaded*100)/e.total);
+        $progress.value = progress;
+        $span.innerHTML = `<b>${file.name} - ${progress}%</b>`
+    });
+    fileReader.addEventListener("loadend", (e)=>{
+
+         sendData(file);
+
+         setTimeout(()=>{
+            $main.removeChild($progress);
+            $main.removeChild($span);
+         }, 3000);
+    });
+    }
+
+    $dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        e.target.classList.add("is-active");
+        })
+
+    $dropZone.addEventListener('drop', (e) => {
+        const files = Array.from(e.dataTransfer.files);
+        files.forEach((el)=>{ progressUpload(el)});
+        })
+
+    
+    $dropZone.addEventListener('dragleave', (e) => {
+        e.target.classList.remove("is-active");
+        })
+
+     </script>
+</body>
+</html>

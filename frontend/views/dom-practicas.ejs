@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es" data-dark class="docu">
+  <head>
+    <title>DOM | Practices</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Styles Css -->
+    <link rel="stylesheet" href="./css/dom-practicas.css"></link>
+     <!-- Styles Css sessions-->
+    <link rel="stylesheet" href="./css/Keyboard_events.css"></link>
+    <link rel="stylesheet" href="./css/countdown.css"></link>
+    <link rel="stylesheet" href="./css/responsive-tester.css"></link>
+    <link rel="stylesheet" href="./css/conection_state.css"></link>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Krub&family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-dark>
+    <!-- Ir Arriba -->
+    <div class="go-top">
+      <span class="fas fa-angle-up"></span>
+    </div>
+
+    <!-- Menu de Navegacion -->
+    <header id="header">
+      <nav class="menu" data-dark>
+        <div class="logo-box">
+          <h1>
+            <a href="index.html" data-dark>CV Web Design</a>
+          </h1>
+
+          <span class="hamburger-inner btn-menu"><i class="fas fa-bars"></i></span>
+
+        </div>
+        <div class="list-container">
+          <ul class="lists">
+            <li><a class="sessions-menu" href="http://localhost:3000/stripe-payments" class="active">Stripe Shop</a></li>
+            <li><a class="sessions-menu" href="http://localhost:3000/uploader">Uploader with Drag And Drop</a></li>
+            <li><a class="sessions-menu" href="http://localhost:3000/form-ajax">Contact Form with AJAX</a></li>
+            <li><a class="sessions-menu" href="#session1">Digital Watch and Alarm</a></li>
+            <li><a class="sessions-menu" href="#session2">Keyboard Events</a></li>
+            <li><a class="sessions-menu" href="#session3">Countdown</a></li>
+            <li><a class="sessions-menu" href="#session4">Dark Mode</a></li>
+            <li><a class="sessions-menu" href="#session5">Local Storage</a></li>
+            <li><a class="sessions-menu" href="#session6">Responsive  with JS</a></li>
+            <li><a class="sessions-menu" href="#session7">Responsive  Tester</a></li>
+            <li><a class="sessions-menu" href="#session8">Connection Status</a></li>
+            <li><a class="sessions-menu" href="#session9">Web Cam Detection</a></li>
+            <li><a class="sessions-menu" href="#session10">Geolocalocation</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Imagen Header -->
+      <div class="img-header">
+        <div class="welcome">
+          <h1>Eduardo González Jasso</h1>
+          <hr />
+          <p>Web Designer</p>
+          <button id="abajo">Profile</button>
+        </div>
+      </div>
+
+      <div class="skew-abajo"></div>
+    </header>
+
+    <main>
+
+        <!-- About me -->
+    <section class="about-me">
+      <div class="info-container">
+        <h1>About me</h1>
+        <p>Energetic web designer with 2 years of experience and a love of topping personal goals,
+          using my experience and skills to design responsive and attractive web sites.
+          </p>
+          <h2>Summary</h2>
+          <ul>
+              <li>Solving code problems</li>
+              <li>Javascript</li>
+              <li>Node Js</li>
+              <li>React</li>
+              <li>Proficient in HTML5, CSS3, Responsive Design and Media Queries</li>
+              <li>Have an excelent managment and comunication skills</li>
+              <li>Basic knowledge of Wordpress</li>
+              <li>Git</li>
+          </ul>
+      </div>
+    </section>
+
+        <h2>One Page DOM Sessions</h2>
+        <section id="session1" class="section">
+            <h3>Digital Watch and Alarm</h3>
+            <div id="watch"></div>
+            <button id="enable-watch">Play watch</button>
+            <button id="disable-watch">Stop watch</button>
+            <button id="enable-alarm">Play alarm</button>
+            <button id="disable-alarm">Stop alarm</button>
+        </section>
+        <section id="session2" class="section">
+            <h3>Keyboard Events</h3>
+            <article class="stage">
+              <div class="ball"></div>
+            </article>
+        </section>
+        <section id="session3" class="section">
+            <h3>Countdown</h3>
+            <div id="countdown"></div>
+        </section>
+        <section id="session4" class="section">
+            <h3>Dark Mode</h3>
+            <p>If you press the moon on the left/down side ¡You can change to dark mode!</p>
+        </section>
+        <section id="session5" class="section">
+            <h3>Local Storage</h3>
+            <p>If you see dark mode or light mode keeps memory on local storage after browser session is closed</p>
+        </section>
+        <section id="session6" class="section">
+          <h3>Responsive Design with JS</h3>
+          <div id="youtube"></div>
+          <div id="gmaps"></div>
+        </section>
+        <section id="session7" class="section">
+          <h3>Responsive Tester</h3>
+          <form id="responsive-tester">
+            <input name="direction" type="url" placeholder="URL" required>
+            <br>
+            <input name="width" type="text" placeholder="width" required>
+            <br>
+            <input name="height" type="text" placeholder="height" required>
+            <br>
+            <input name="test" type="submit" value="Test">
+            <input name="close" type="button" value="Close">
+          </form>
+        </section>
+        <section id="session8" class="section">
+            <h3>Connection State</h3>
+            <p>On web developer tools, inside application tab, turn on and off wifi connection to check a connection advice</p>
+        </section>
+        <section id="session9" class="section">
+          <h3>Web Cam Detection</h3>
+          <video id="web-cam"></video>
+        </section>
+        <section id="session10" class="section">
+          <h3>Geolocation</h3>
+          <div id="geolocation"></div>
+        </section>
+        <!-- TEMPLATES -->
+
+        <div data-include="./componentes/dom-practicas.ejs">
+
+        </div>
+
+    </main>
+
+    <button class="dark-theme-btn">🌙</button>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="skew-arriba"></div>
+      <div class="deg-footer"></div>
+
+      <div class="ejeZfooter">
+        <div class="footer-content">
+          <div class="footer-text">
+            <p>&copy; Web Artists - 2022 | All rights reserved to Eduardo Jasso</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/35db202371.js"></script>
+    <script src="./scripts/dom_sessions.js" type="module"></script>
+    <script src="./scripts/dom-scripts.js" type="module"></script>
+    <script src="./controllers/includeDomPracticas.js" type="module"></script>
+  </body>
+</html>

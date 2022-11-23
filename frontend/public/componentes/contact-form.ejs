@@ -1,0 +1,18 @@
+<form class="contact_form" action="http://localhost:5000">
+    <leyend>Envíanos tus comentarios</leyend>
+    <input type="text" name="name" placeholder="Escríbe tu nombre" 
+    title="Nombre solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required="valid">
+    <input type="email" name="email" placeholder="Escríbe tu email" 
+    title="Escribe un email con un formato correcto ejemplo@provedordecorreo.com" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+    <input type="text" name="subject" placeholder="Asunto a tratar" title="El asunto es requerido" required>
+    <textarea  name="commnets" placeholder="Escribe tus comentarios" 
+    data-pattern="^.{1,255}$" cols="50" rows="5" title="Tu comentario no debe exeder los 255 caracteres"  required></textarea>
+    <input type="submit" value="Enviar"></input>
+    <div class="contact-form-loader none">
+        <img src="./uploadSvg/loader.svg" alt="Cargando">
+    </div>
+    <div class="contact-form-response none">
+        <p>Los datos han sido enviados</p>
+    </div>
+</form>
+

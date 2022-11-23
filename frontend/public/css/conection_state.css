@@ -1,0 +1,15 @@
+.online, 
+.offline {
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    padding: 1rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: #1b5e20;
+    color: #fff;
+}
+
+.offline {
+    background-color: #b71c1c;
+}

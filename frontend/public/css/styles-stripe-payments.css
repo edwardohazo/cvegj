@@ -1,0 +1,57 @@
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+main {
+    background-image: url("../uploads/shop.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.encabezado {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Kalam', cursive;
+    margin: 0;
+}
+
+.sandalias {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sandalias > * {
+    flex: 1 1 300px;
+    margin: 1rem;
+}
+
+.sandalia {
+    color: #000;
+    font-size: 125%;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.sandalia:hover {
+    transform: scale(.9);
+}
+
+.sandalia img {
+    max-width: 100%;
+    height: auto;
+}
+
+.sandalia figcaption {
+    background-color:  #f4fa36;
+    padding: 1rem;
+}
